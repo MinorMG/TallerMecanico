@@ -1,13 +1,13 @@
+
 body{
-    background: #dfdfdf;
+    background: #EAF4FC;
 }
 
 footer {
-    background-color: #f2f2f2;
+    background-color: #ececec;
     padding: 25px 0;
     text-align: center;
 }
-
 .table {
     margin: 0;
     width: 100%;
@@ -51,20 +51,37 @@ footer {
 }
 
 /*algunas animaciones*/
-.moverx {
+.hoverx {
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
-.moverx:hover {
+.hoverx:hover {
     transform: translateX(50px);
 }
 
-.movery {
+.hovery {
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
-.movery:hover {
+.hovery:hover {
     transform: translateY(-25px);
+}
+
+button:active {
+    animation: click 0.1s ease;
+}
+
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
