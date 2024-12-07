@@ -1,6 +1,7 @@
 
 body{
     background: #EAF4FC;
+    min-height: 100vh;
 }
 
 footer {
@@ -8,6 +9,11 @@ footer {
     padding: 25px 0;
     text-align: center;
 }
+
+a {
+    text-decoration: none;
+}
+
 .table {
     margin: 0;
     width: 100%;
@@ -16,7 +22,7 @@ footer {
 }
 
 .table thead tr {
-    border-bottom: 2px solid #0d6efd;
+    border-bottom: 2px solid #004680;
 }
 
 .container {
@@ -50,29 +56,15 @@ footer {
     width: 500px;
 }
 
-/*algunas animaciones*/
-.hoverx {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.hoverx:hover {
-    transform: translateX(50px);
-}
-
-.hovery {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.hovery:hover {
-    transform: translateY(-25px);
-}
-
 button:active {
     animation: click 0.1s ease;
 }
 
+.btn {
+    white-space: nowrap; /* Evita que el texto se divida en varias lineas */
+    overflow: hidden;    /* Oculta el texto que se sale*/
+    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+}
 
 @keyframes click {
     0% {
@@ -83,5 +75,56 @@ button:active {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+.grid-container > *{
+    text-align: center;
+    padding: 0px;
+}
+
+.grid-container{
+    display: grid;
+    gap: 20px;
+    grid-template:
+    "header"
+    "navbar"
+    "main"
+    "sidebar"
+    "footer"
+    ;
+
+    .header{
+        grid-area: header;
+    }
+
+    .sidebar{
+        grid-area: navbar;
+        background-color: #fff;
+        margin-left: 20px;
+        overflow: hidden;
+        justify-items: center;
+        align-items: center;
+ 
+    }
+
+    .main{
+        grid-area: main;
+        background-color: #eaf4fc;
+        margin-right: 20px;
+    }
+
+    .footer{
+        background-color: #d9e2e9;
+        grid-area: footer;
+        padding: 2%;
+    }
+
+    @media (min-width:992px){
+        grid-template:
+        "header header header" 55px
+        "navbar main main" auto
+        "footer footer footer" 100px/
+        400px auto 200px;
     }
 }
