@@ -46,42 +46,81 @@
     <nav class="sidebar p-4 rounded-3">
       <!-- buscar -->
 
-      <div class="input-group mx-5 mt-2">
+      <div class="mt-3">
         <input type="text" placeholder="Buscar repuesto" class="form-control" />
-        <button class="btn btn-secondary text-white" type="submit">
-          Buscar
-        </button>
       </div>
 
       <!-- filtros -->
-      <div class="my-5 row container">
-        <div class="col">
-          <label for="selecCategory" class="form-label"
-            ><h6 class="">Categoria:</h6></label
-          >
-          <select id="selectCategory" class="form-select shadow-sm">
-            <option value="todo">Todo</option>
-            <option value="">[categoria]</option>
-            <option value="">[categoria]</option>
-            <option value="">[categoria]</option>
-          </select>
+      <div class="my-4 d-flex gap-3 column-gap-5">
+        <!--COL 1----------------------->
+        <div class="col row">
+          <div class="mb-4">
+            <label for="selecCategory" class="form-label">
+              <h6 class="">Categoria:</h6></label
+            >
+            <select id="selectCategory" class="form-select shadow-sm">
+              <option value="todo">Todo</option>
+              <option value="">[categoria]</option>
+              <option value="">[categoria]</option>
+              <option value="">[categoria]</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="selecMarca" class="form-label">
+              <h6 class="">Marca:</h6></label
+            >
+            <select id="selectMarca" class="form-select shadow-sm">
+              <option value="todo">Todo</option>
+              <option value="">[marca]</option>
+              <option value="">[marca]</option>
+              <option value="">[marca]</option>
+            </select>
+          </div>
         </div>
-        <div class="col">
-          <label for="selecStock" class="form-label"
-            ><h6 class="">Stock:</h6></label
-          >
-          <select id="selectStock" class="form-select shadow-sm">
-            <option value="todo">Todo</option>
-            <option value="">0 - 10</option>
-            <option value="">10 - 20</option>
-            <option value="">20 - 30</option>
-          </select>
+
+        <!--COL 2--------------------->
+        <div class="col row">
+          <div class="mb-4">
+            <label for="selecStock" class="form-label">
+              <h6 class="">Stock:</h6></label
+            >
+            <select id="selectStock" class="form-select shadow-sm">
+              <option value="todo">Todo</option>
+              <option value="">0 - 10</option>
+              <option value="">10 - 20</option>
+              <option value="">20 - 30</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="" class="form-label">
+              <h6 class="">Compatible:</h6></label
+            >
+            <select id="" class="form-select shadow-sm">
+              <option value="todo">Todo</option>
+              <option value="">[proveedor]</option>
+              <option value="">[proveedor]</option>
+              <option value="">[proveedor]</option>
+            </select>
+          </div>
         </div>
       </div>
 
+      <!--inputs rangos-->
+      <div class="d-flex flex-column gap-4 mb-4">
+
+        <div class="bg-body-tertiary rounded-3 p-2">rango de precios</div>
+
+        <div class="bg-body-tertiary rounded-3 p-2">rango de stock</div>
+
+        <button class="btn btn-secondary px-5 text-white">Buscar</button>
+      </div>
+
       <!-- Agregar -->
-      <div class="d-flex" style="justify-self: start">
-        <button class="btn btn-primary px-5 text-white">Agregar</button>
+      <div class="row mx-1">
+        <hr>
+        <button class="btn btn-dark px-5 text-white">Agregar Repuesto/Servicio</button>
       </div>
     </nav>
 
