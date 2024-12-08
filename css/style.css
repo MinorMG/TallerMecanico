@@ -62,7 +62,6 @@ button:active {
 .btn {
   white-space: nowrap; /* Evita que el texto se divida en varias lineas */
   overflow: hidden; /* Oculta el texto que se sale*/
-  text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
 }
 
 @keyframes click {
