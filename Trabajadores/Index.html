@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabajadores</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/scss/custom.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/gtr.css" />
+  </head>
+  <body class="grid-container">
+    <header class="header">
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark px-3">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link active">LOGO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">option</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">option</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#" class="text-light">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="sidebar p-4 rounded-3">
+      <!-- buscar -->
+
+      <div class="input-group mx-5 mt-2">
+        <input type="text" placeholder="Buscar empleado" class="form-control" />
+        <button class="btn btn-secondary text-white" type="submit">
+          Buscar
+        </button>
+      </div>
+
+      <!-- filtros -->
+      <div class="my-5 row container">
+        <div class="col col-6">
+          <span for="selecCategory" class=""> <h6 class="">Rol:</h6></span>
+          <select id="selectCategory" class="form-select shadow-sm">
+            <option value="todo">Todo</option>
+            <option value="">[rol]</option>
+            <option value="">[rol]</option>
+            <option value="">[rol]</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Agregar -->
+      <div class="d-flex" style="justify-self: start">
+        <button
+          class="btn btn-primary px-5 text-white"
+          data-bs-toggle="modal"
+          data-bs-target="#addModal"
+        >
+          Agregar
+        </button>
+      </div>
+    </nav>
+
+    <main class="main rounded-3 p-3">
+      <!-- Contenedor de articulos -->
+      <div class="article-container">
+        <table class="table table-borderless table-hover">
+          <thead>
+            <tr>
+              <th>Nombre Completo</th>
+              <th>Cédula</th>
+              <th>Rol</th>
+              <th>Horario</th>
+              <th>Salario</th>
+              <th>Seguro Social</th>
+              <th>Vacaciones</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>[nombre apellido apellido]</td>
+              <td>[cedula]</td>
+              <td>[rol]</td>
+              <td>[horario]</td>
+              <td>₡[salario]</td>
+              <td>[seguro social]</td>
+              <td>[vacaciones]</td>
+              <td class="d-flex justify-content-center gap-3">
+                <button class="btn btn-danger text-white">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button
+                  class="btn btn-warning text-white"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal"
+                >
+                  <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>[nombre apellido apellido]</td>
+              <td>[cedula]</td>
+              <td>[rol]</td>
+              <td>[horario]</td>
+              <td>₡[salario]</td>
+              <td>[seguro social]</td>
+              <td>[vacaciones]</td>
+              <td class="d-flex justify-content-center gap-3">
+                <button class="btn btn-danger text-white">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="btn btn-warning text-white">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>[nombre apellido apellido]</td>
+              <td>[cedula]</td>
+              <td>[rol]</td>
+              <td>[horario]</td>
+              <td>₡[salario]</td>
+              <td>[seguro social]</td>
+              <td>[vacaciones]</td>
+              <td class="d-flex justify-content-center gap-3">
+                <button class="btn btn-danger text-white">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="btn btn-warning text-white">
+                  <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!--MODAL-->
+    <div class="modal" id="editModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-heade"></div>
+
+          <div class="modal-body">
+            <h3 class="text-primary text-center mt-1 mb-3">Editar Usuario</h3>
+            <hr class="text-primary mx-2 border-2" />
+
+            <div class="col-10 mx-auto d-flex flex-column gap-3">
+              <span>
+                <span>Nombre:</span>
+                <input
+                  class="form-control border-1"
+                  type="text"
+                  placeholder="Nombre"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Cedula:</span>
+                <input
+                  class="form-control border-1"
+                  type="text"
+                  placeholder="Cédula"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Rol</span>
+                <select class="form-select" style="width: 470%">
+                  <option class="text-secondary">Rol</option>
+                  <option>[rol]</option>
+                  <option>[rol]</option>
+                  <option>[rol]</option>
+                </select>
+              </span>
+
+              <span>
+                <span>Horario:</span>
+                <input
+                  class="form-control border-1"
+                  placeholder="Horario"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Salario:</span>
+                <input
+                  class="form-control border-1"
+                  type="number"
+                  placeholder="Salario CRC"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Seguro Social:</span>
+                <input
+                  class="form-control border-1"
+                  placeholder="Seguro social"
+                  style="width: 180%"
+                />
+              </span>
+            </div>
+
+            <div class="modal-footer my-4 d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-danger text-white"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button class="btn btn-dark rounded-3 text-white">
+                Generar Reporte
+              </button>
+              <button class="btn btn-success rounded-3 text-white">
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="addModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-heade"></div>
+
+          <div class="modal-body">
+            <h3 class="text-primary text-center mt-1 mb-3">Nuevo Usuario</h3>
+            <hr class="text-primary mx-2 border-2" />
+
+            <div class="col-10 mx-auto d-flex flex-column gap-3">
+                <span>
+                  <span>Nombre:</span>
+                  <input
+                    class="form-control border-1"
+                    type="text"
+                    placeholder="Nombre"
+                    style="width: 180%"
+                  />
+                </span>
+  
+                <span>
+                  <span>Cedula:</span>
+                  <input
+                    class="form-control border-1"
+                    type="text"
+                    placeholder="Cédula"
+                    style="width: 180%"
+                  />
+                </span>
+  
+                <span>
+                  <span>Rol</span>
+                  <select class="form-select" style="width: 470%">
+                    <option class="text-secondary">Rol</option>
+                    <option>[rol]</option>
+                    <option>[rol]</option>
+                    <option>[rol]</option>
+                  </select>
+                </span>
+  
+                <span>
+                  <span>Horario:</span>
+                  <input
+                    class="form-control border-1"
+                    placeholder="Horario"
+                    style="width: 180%"
+                  />
+                </span>
+  
+                <span>
+                  <span>Salario:</span>
+                  <input
+                    class="form-control border-1"
+                    type="number"
+                    placeholder="Salario CRC"
+                    style="width: 180%"
+                  />
+                </span>
+  
+                <span>
+                  <span>Seguro Social:</span>
+                  <input
+                    class="form-control border-1"
+                    placeholder="Seguro social"
+                    style="width: 180%"
+                  />
+                </span>
+              </div>
+
+            <div class="modal-footer my-4 d-flex justify-content-between">
+              <button
+                type="button"
+                class="btn btn-danger text-white"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button class="btn btn-success rounded-3 text-white">
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Derechos Reservados 2024 - Analisis y Modelado de Requerimientos</p>
+    </footer>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

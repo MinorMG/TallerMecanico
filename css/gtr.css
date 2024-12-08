@@ -1,0 +1,35 @@
+/* Gestion trabajadores */
+.grid-container-item{
+    display: grid;
+    gap: 20px;
+    grid-template:
+    "header"
+    "main"
+    "footer"
+    ;
+
+    .header{
+        grid-area: header;
+    }
+
+    .main{
+        grid-area: main;
+        background-color: #eaf4fc;
+        margin-right: 20px;
+    }
+
+    .footer{
+        background-color: #d9e2e9;
+        grid-area: footer;
+        padding: 2%;
+    }
+
+    @media (min-width:992px){
+        grid-template:
+        "header header header" 55px
+        "navbar main main" auto
+        "footer footer footer" 100px/
+        0px auto 200px;
+    }
+}
+
