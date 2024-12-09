@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/scss/custom.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/gtr.css" />
+  <link rel="stylesheet" href="/css/Ventas.css" />
+</head>
+
+<body class="grid-container">
+
+  <header class="header">
+
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark px-3">
+
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li>
+            <a class="nav-link active">LOGO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">option</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">option</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" class="text-light">Logout</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+  <nav class="sidebar p-4 rounded-3">
+    <!-- buscar -->
+
+    <div class="input-group mx-5 mt-2">
+      <input type="text" placeholder="Buscar Venta" class="form-control" />
+      <button class="btn btn-secondary text-white" type="submit">
+        Buscar
+      </button>
+    </div>
+    <div class="input-group mx-5 mt-2">
+      <input type="text" placeholder="Buscar Cotización" class="form-control" />
+      <button class="btn btn-secondary text-white" type="submit">
+        Buscar
+      </button>
+    </div>
+
+    <!-- filtros -->
+    <div class="my-5 row container">
+      <div class="col col-6">
+        <span for="selecCategory" class="">
+          <h6 class="">Ordenar:</h6>
+        </span>
+        <select id="selectCategory" class="form-select shadow-sm">
+          <option value="todo">Todo</option>
+          <option value="">Fecha</option>
+          <option value="">De mayor a menor</option>
+          <option value="">De menor a mayor</option>
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Agregar venta -->
+    <div class="d-flex" style="justify-self: start">
+      <button class="btn btn-primary px-5 text-white" data-bs-toggle="modal" data-bs-target="#addModalCotizacion">
+        Agregar Cotización
+      </button>
+    </div>
+    <br>
+    <div class="d-flex" style="justify-self: start">
+      <button class="btn btn-primary px-5 text-white" data-bs-toggle="modal" data-bs-target="#addModalVentas">
+        Agregar Venta
+      </button>
+    </div>
+
+
+
+  </nav>
+
+  <main class="main rounded-3 p-3">
+    <!--Tabla cotizacion---------------------------------->
+    <h3>Cotización</h3>
+    <div class="table-background">
+      
+      
+      <table class="table table-borderless table-hover">
+        
+        <thead>
+          <tr>
+            <th>Id Cotización</th>
+            <th>Nombre Cliente</th>
+            <th>Fecha Cotización</th>
+            <th>Id Cliente</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Monto total de repuestos/th>
+            <th>Monto total de mano de obra</th>
+            <th>Monto total Estimado</th>
+            <th>Tiempo estimado </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- -->
+          <tr>
+            <td>1</td>
+            <td>Juan Carlos Lopez</td>
+            <td>11/11/2024</td>
+            <td>3</td>
+            <td>juan@gmail.com</td>
+            <td>+506 7887-6565</td>
+            <td>100mts este del estadio municipal de cartago</td>
+            <td>450,000₡</td>
+            <td>275,000₡</td>
+            <td>725,000₡</td>
+            <td>2 Semanas</td>
+            <td class="d-flex justify-content-center gap-3">
+              <button class="btn btn-danger text-white">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <button class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editModalCotizacion">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-success rounded-3 text-white">
+                Confirmar
+              </button>
+            </td>
+          </tr>
+          <!-- -->
+          <tr>
+            <td>1</td>
+            <td>Juan Carlos Lopez</td>
+            <td>11/11/2024</td>
+            <td>3</td>
+            <td>juan@gmail.com</td>
+            <td>+506 7887-6565</td>
+            <td>100mts este del estadio municipal de cartago</td>
+            <td>450,000₡</td>
+            <td>275,000₡</td>
+            <td>725,000₡</td>
+            <td>2 Semanas</td>
+            <td class="d-flex justify-content-center gap-3">
+              <button class="btn btn-danger text-white">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <button class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editModalCotizacion">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-success rounded-3 text-white">
+                Confirmar
+              </button>
+            </td>
+          </tr>
+          <!-- -->
+          <tr>
+            <td>1</td>
+            <td>Juan Carlos Lopez</td>
+            <td>11/11/2024</td>
+            <td>3</td>
+            <td>juan@gmail.com</td>
+            <td>+506 7887-6565</td>
+            <td>100mts este del estadio municipal de cartago</td>
+            <td>450,000₡</td>
+            <td>275,000₡</td>
+            <td>725,000₡</td>
+            <td>2 Semanas</td>
+            <td class="d-flex justify-content-center gap-3">
+              <button class="btn btn-danger text-white">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <button class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editModalCotizacion">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button class="btn btn-success rounded-3 text-white">
+                Confirmar
+              </button>
+            </td>
+          </tr>
+          <!-- -->
+        </tbody>
+      </table>
+    </div>
+
+    <!--Tabla Ventas---------------------------------->
+    <h3>Ventas</h3>
+    <div class="table-background">
+      
+      <table class="table table-borderless table-hover">
+        <thead>
+          <tr>
+            <th>Id Venta</th>
+            <th>fecha de Venta</th>
+            <th>Nombre Cliente</th>
+            <th>Id Cliente</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Monto total de repuestos/th>
+            <th>Monto total de mano de obra</th>
+            <th>Monto total Estimado</th>
+            <th>Detalle Mano de obra</th>
+            <th>Repuestos comprados</th>
+            <th>Tiempo estimado </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- -->
+          <tr>
+            <td>1</td>
+            <td>20/11/2014</td>
+            <td>Pedro Montero</td>
+            <td>1-2345-3322</td>
+            <td>prdors@gmail.com</td>
+            <td>250mts oeste escula el guarco</td>
+            <td>2,750,000₡</td>
+            <td>300,000₡</td>
+            <td>3,050,000₡</td>
+            <td>Cambio de llantas y remplazo de turbo</td>
+            <td>8 llantas 1,050,000₡ / Turbo 2,000,000₡</td>
+            <td>3 días</td>
+            <td class="d-flex justify-content-center gap-3">
+              <button class="btn btn-danger text-white">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <button class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editModalVentas">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+            </td>
+          </tr>
+
+          <!-- -->
+          <tr>
+            <td>1</td>
+            <td>20/11/2014</td>
+            <td>Pedro Montero</td>
+            <td>1-2345-3322</td>
+            <td>prdors@gmail.com</td>
+            <td>250mts oeste escula el guarco</td>
+            <td>2,750,000₡</td>
+            <td>300,000₡</td>
+            <td>3,050,000₡</td>
+            <td>Cambio de llantas y remplazo de turbo</td>
+            <td>8 llantas 1,050,000₡ / Turbo 2,000,000₡</td>
+            <td>3 días</td>
+            <td class="d-flex justify-content-center gap-3">
+              <button class="btn btn-danger text-white">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <button class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editModalVentas">
+                <i class="fa-regular fa-pen-to-square"></i>
+                
+              </button>
+            </td>
+          </tr>
+          <!-- -->
+          <tr>
+            <td>1</td>
+            <td>20/11/2014</td>
+            <td>Pedro Montero</td>
+            <td>1-2345-3322</td>
+            <td>prdors@gmail.com</td>
+            <td>250mts oeste escula el guarco</td>
+            <td>2,750,000₡</td>
+            <td>300,000₡</td>
+            <td>3,050,000₡</td>
+            <td>Cambio de llantas y remplazo de turbo</td>
+            <td>8 llantas 1,050,000₡ / Turbo 2,000,000₡</td>
+            <td>3 días</td>
+            <td class="d-flex justify-content-center gap-3">
+              <button class="btn btn-danger text-white">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+              <button class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editModalVentas">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- -->
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+
+<!--AGREGAR MODAL COTIZACIONES--------listo--------------------------------------------------------->
+<div class="modal" id="addModalCotizacion">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-heade"></div>
+
+      <div class="modal-body">
+        <h3 class="text-primary text-center mt-1 mb-3">Nueva Cotización</h3>
+        <hr class="text-primary mx-2 border-2" />
+
+        <div class="col-10 mx-auto d-flex flex-column gap-3">
+
+          <span>
+            <span>Nombre Cliente:</span>
+            <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Fecha Cotización:</span>
+            <input class="form-control border-1" type="date" placeholder="Cédula" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Clientes Frecuentes:</span>
+            <select id="selectCategory" class="form-select shadow-sm">
+              <option value="todo">Todo</option>
+              <option value="">Juan Perez</option>
+              <option value="">Diego Jimenez</option>
+              <option value="">Cliente no frecuente</option>
+            </select>
+          
+          </span>
+          
+          <span>
+            <span>Nombre Cliente:</span>
+            <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Correo Electronico:</span>
+            <input class="form-control border-1" type="email" placeholder="Email" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Telefono:</span>
+            <input class="form-control border-1" type="number" placeholder="+506" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Dirección:</span>
+            <input class="form-control border-1" type="text" placeholder="Dirección" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Monto total de repuestos:</span>
+            <input class="form-control border-1" type="number" placeholder="Total Repuesto:" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Monto total de mano de obra</span>
+            <input class="form-control border-1" type="number" placeholder="Total Mano de Obra:" style="width: 180%" />
+          </span>
+
+          <span>
+            <span>Tiempo estimado:</span>
+            <input class="form-control border-1" type="time" placeholder="Fecha Compra" style="width: 180%" />
+          </span>
+
+        </div>
+
+        <div class="modal-footer my-4 d-flex justify-content-between">
+          <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+          <button class="btn btn-success rounded-3 text-white">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--AGREGAR MODAL VENTAS-----------------pendiente------------------------------------------------>
+  <div class="modal" id="addModalVentas">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-heade"></div>
+  
+        <div class="modal-body">
+          <h3 class="text-primary text-center mt-1 mb-3">Nueva Venta</h3>
+          <hr class="text-primary mx-2 border-2" />
+  
+          <div class="col-10 mx-auto d-flex flex-column gap-3">
+  
+            <span>
+              <span>Nombre Cliente:</span>
+              <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Fecha Venta:</span>
+              <input class="form-control border-1" type="date" placeholder="Cédula" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Clientes Frecuentes:</span>
+              <select id="selectCategory" class="form-select shadow-sm">
+                <option value="todo">Todo</option>
+                <option value="">Juan Perez</option>
+                <option value="">Diego Jimenez</option>
+                <option value="">Cliente no frecuente</option>
+              </select>
+            
+            </span>
+            
+            <span>
+              <span>Nombre Cliente:</span>
+              <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Correo Electronico:</span>
+              <input class="form-control border-1" type="email" placeholder="Email" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Telefono:</span>
+              <input class="form-control border-1" type="number" placeholder="+506" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Dirección:</span>
+              <input class="form-control border-1" type="text" placeholder="Dirección" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Monto total de repuestos:</span>
+              <input class="form-control border-1" type="number" placeholder="Total Repuesto:" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Monto total de mano de obra</span>
+              <input class="form-control border-1" type="number" placeholder="Total Mano de Obra:" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Tiempo estimado:</span>
+              <input class="form-control border-1" type="time" placeholder="Fecha Compra" style="width: 180%" />
+            </span>
+  
+          </div>
+  
+          <div class="modal-footer my-4 d-flex justify-content-between">
+            <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-success rounded-3 text-white">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--FIN AGREGAR MODAL VENTAS----------------------------------------------------------------->
+
+  <!--MODAL  EDITAR COTIZACION-------------listo------------------------------------------------->
+  <div class="modal" id="editModalCotizacion">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-heade"></div>
+  
+        <div class="modal-body">
+          <h3 class="text-primary text-center mt-1 mb-3">Editar Cotización</h3>
+          <hr class="text-primary mx-2 border-2" />
+  
+          <div class="col-10 mx-auto d-flex flex-column gap-3">
+  
+            <span>
+              <span>Nombre Cliente:</span>
+              <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Fecha Cotización:</span>
+              <input class="form-control border-1" type="date" placeholder="Cédula" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Clientes Frecuentes:</span>
+              <select id="selectCategory" class="form-select shadow-sm">
+                <option value="todo">Todo</option>
+                <option value="">Juan Perez</option>
+                <option value="">Diego Jimenez</option>
+                <option value="">Cliente no frecuente</option>
+              </select>
+            
+            </span>
+            
+            <span>
+              <span>Nombre Cliente:</span>
+              <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Correo Electronico:</span>
+              <input class="form-control border-1" type="email" placeholder="Email" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Telefono:</span>
+              <input class="form-control border-1" type="number" placeholder="+506" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Dirección:</span>
+              <input class="form-control border-1" type="text" placeholder="Dirección" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Monto total de repuestos:</span>
+              <input class="form-control border-1" type="number" placeholder="Total Repuesto:" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Monto total de mano de obra</span>
+              <input class="form-control border-1" type="number" placeholder="Total Mano de Obra:" style="width: 180%" />
+            </span>
+  
+            <span>
+              <span>Tiempo estimado:</span>
+              <input class="form-control border-1" type="time" placeholder="Fecha Compra" style="width: 180%" />
+            </span>
+  
+          </div>
+  
+          <div class="modal-footer my-4 d-flex justify-content-between">
+            <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-success rounded-3 text-white">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--MODAL  EDITAR VENTAS--------------------PENDIENTE------------------------------------------>
+    <div class="modal" id="editModalVentas">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-heade"></div>
+      
+            <div class="modal-body">
+              <h3 class="text-primary text-center mt-1 mb-3">Nueva Venta</h3>
+              <hr class="text-primary mx-2 border-2" />
+      
+              <div class="col-10 mx-auto d-flex flex-column gap-3">
+      
+                <span>
+                  <span>Nombre Cliente:</span>
+                  <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Fecha Venta:</span>
+                  <input class="form-control border-1" type="date" placeholder="Cédula" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Clientes Frecuentes:</span>
+                  <select id="selectCategory" class="form-select shadow-sm">
+                    <option value="todo">Todo</option>
+                    <option value="">Juan Perez</option>
+                    <option value="">Diego Jimenez</option>
+                    <option value="">Cliente no frecuente</option>
+                  </select>
+                
+                </span>
+                
+                <span>
+                  <span>Nombre Cliente:</span>
+                  <input class="form-control border-1" type="text" placeholder="Nombre" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Correo Electronico:</span>
+                  <input class="form-control border-1" type="email" placeholder="Email" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Telefono:</span>
+                  <input class="form-control border-1" type="number" placeholder="+506" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Dirección:</span>
+                  <input class="form-control border-1" type="text" placeholder="Dirección" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Monto total de repuestos:</span>
+                  <input class="form-control border-1" type="number" placeholder="Total Repuesto:" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Monto total de mano de obra</span>
+                  <input class="form-control border-1" type="number" placeholder="Total Mano de Obra:" style="width: 180%" />
+                </span>
+      
+                <span>
+                  <span>Tiempo estimado:</span>
+                  <input class="form-control border-1" type="time" placeholder="Fecha Compra" style="width: 180%" />
+                </span>
+      
+              </div>
+      
+              <div class="modal-footer my-4 d-flex justify-content-between">
+                <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+                <button class="btn btn-success rounded-3 text-white">
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!------------------FIN MODAL  EDITAR VENTAS-------------------------------------------------------------->
+
+
+ 
+
+  <footer class="footer">
+    <p>Derechos Reservados 2024 - Analisis y Modelado de Requerimientos</p>
+  </footer>
+
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
