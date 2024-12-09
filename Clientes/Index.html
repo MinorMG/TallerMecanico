@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trabajadores</title>
+    <title>Clientes</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="/css/gtr.css" />
   </head>
   <body class="grid-container">
+
     <header class="header">
+      
       <nav class="navbar navbar-expand-sm bg-primary navbar-dark px-3">
+        
         <div class="container-fluid">
           <ul class="navbar-nav">
             <li>
@@ -40,6 +43,7 @@
             </li>
           </ul>
         </div>
+     
       </nav>
     </header>
 
@@ -47,7 +51,7 @@
       <!-- buscar -->
 
       <div class="input-group mx-5 mt-2">
-        <input type="text" placeholder="Buscar empleado" class="form-control" />
+        <input type="text" placeholder="Buscar Cliente" class="form-control" />
         <button class="btn btn-secondary text-white" type="submit">
           Buscar
         </button>
@@ -86,23 +90,24 @@
             <tr>
               <th>Nombre Completo</th>
               <th>Cédula</th>
-              <th>Rol</th>
-              <th>Horario</th>
-              <th>Salario</th>
-              <th>Seguro Social</th>
-              <th>Vacaciones</th>
+              <th>Fecha de Ingreso</th>
+              <th>Email</th>
+              <th>Telefono</th>
+              <th>Direccion</th>
+              <th>Fecha ultima compra</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>[nombre apellido apellido]</td>
-              <td>[cedula]</td>
-              <td>[rol]</td>
-              <td>[horario]</td>
-              <td>₡[salario]</td>
-              <td>[seguro social]</td>
-              <td>[vacaciones]</td>
+              <td>[Nombre Completo]</td>
+              <td>[Cédula]</td>
+              <td>[Fecha de Ingreso]</td>
+              <td>[Email]</td>
+              <td>[Telefono]</td>
+              <td>[Direccion]</td>
+              <td>[Fecha ultima compra]</td>
+              <td></td>
               <td class="d-flex justify-content-center gap-3">
                 <button class="btn btn-danger text-white">
                   <i class="fa-solid fa-trash"></i>
@@ -116,61 +121,74 @@
                 </button>
               </td>
             </tr>
-           
-           
+            <!-- objetos de la tabla-->
             <tr>
-              <td>[nombre apellido apellido]</td>
-              <td>[cedula]</td>
-              <td>[rol]</td>
-              <td>[horario]</td>
-              <td>₡[salario]</td>
-              <td>[seguro social]</td>
-              <td>[vacaciones]</td>
+              <td>[Nombre Completo]</td>
+              <td>[Cédula]</td>
+              <td>[Fecha de Ingreso]</td>
+              <td>[Email]</td>
+              <td>[Telefono]</td>
+              <td>[Direccion]</td>
+              <td>[Fecha ultima compra]</td>
+              <td></td>
               <td class="d-flex justify-content-center gap-3">
                 <button class="btn btn-danger text-white">
                   <i class="fa-solid fa-trash"></i>
                 </button>
-                <button class="btn btn-warning text-white">
+                <button
+                  class="btn btn-warning text-white"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal"
+                >
                   <i class="fa-regular fa-pen-to-square"></i>
                 </button>
               </td>
             </tr>
 
             <tr>
-              <td>[nombre apellido apellido]</td>
-              <td>[cedula]</td>
-              <td>[rol]</td>
-              <td>[horario]</td>
-              <td>₡[salario]</td>
-              <td>[seguro social]</td>
-              <td>[vacaciones]</td>
+              <td>[Nombre Completo]</td>
+              <td>[Cédula]</td>
+              <td>[Fecha de Ingreso]</td>
+              <td>[Email]</td>
+              <td>[Telefono]</td>
+              <td>[Direccion]</td>
+              <td>[Fecha ultima compra]</td>
+              <td></td>
               <td class="d-flex justify-content-center gap-3">
                 <button class="btn btn-danger text-white">
                   <i class="fa-solid fa-trash"></i>
                 </button>
-                <button class="btn btn-warning text-white">
+                <button
+                  class="btn btn-warning text-white"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal"
+                >
                   <i class="fa-regular fa-pen-to-square"></i>
                 </button>
               </td>
             </tr>
+            
           </tbody>
         </table>
       </div>
     </main>
 
-    <!--MODAL--------------------------------------------------------------->
+
+
+
+    <!--MODAL  EDITAR-------------------------------------------------------------->
     <div class="modal" id="editModal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-heade"></div>
 
           <div class="modal-body">
-            <h3 class="text-primary text-center mt-1 mb-3">Editar Usuario</h3>
+            <h3 class="text-primary text-center mt-1 mb-3">Editar Cliente</h3>
             <hr class="text-primary mx-2 border-2" />
 
             <div class="col-10 mx-auto d-flex flex-column gap-3">
               <span>
-                <span>Nomffbre:</span>
+                <span>Nombre Completo:</span>
                 <input
                   class="form-control border-1"
                   type="text"
@@ -190,42 +208,46 @@
               </span>
 
               <span>
-                <span>Rol</span>
-                <select class="form-select" style="width: 470%">
-                  <option class="text-secondary">Rol</option>
-                  <option>[rol]</option>
-                  <option>[rol]</option>
-                  <option>[rol]</option>
-                </select>
-              </span>
-
-              <span>
-                <span>Horario:</span>
+                <span>Fecha de Ingreso:</span>
                 <input
                   class="form-control border-1"
-                  placeholder="Horario"
+                  type="date"
+                  placeholder="Fecha"
                   style="width: 180%"
                 />
               </span>
 
               <span>
-                <span>Salario:</span>
+                <span>Correo Electronico:</span>
                 <input
                   class="form-control border-1"
-                  type="number"
-                  placeholder="Salario CRC"
+                  type="email"
+                  placeholder="Email"
                   style="width: 180%"
                 />
               </span>
 
               <span>
-                <span>Seguro Social:</span>
+                <span>Dirección:</span>
                 <input
                   class="form-control border-1"
-                  placeholder="Seguro social"
+                  type="text"
+                  placeholder="Dirección"
                   style="width: 180%"
                 />
               </span>
+
+              <span>
+                <span>Fecha de ultima compra:</span>
+                <input
+                  class="form-control border-1"
+                  type="date"
+                  placeholder="Fecha Compra"
+                  style="width: 180%"
+                />
+              </span>
+
+              
             </div>
 
             <div class="modal-footer my-4 d-flex justify-content-between">
@@ -248,73 +270,79 @@
       </div>
     </div>
 
+
+    <!--AGREGAR MODALL----------------------------------------------------------------->
     <div class="modal" id="addModal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-heade"></div>
 
           <div class="modal-body">
-            <h3 class="text-primary text-center mt-1 mb-3">Nuevo Usuario</h3>
+            <h3 class="text-primary text-center mt-1 mb-3">Nuevo Cliente</h3>
             <hr class="text-primary mx-2 border-2" />
 
             <div class="col-10 mx-auto d-flex flex-column gap-3">
-                <span>
-                  <span>Nombre:</span>
-                  <input
-                    class="form-control border-1"
-                    type="text"
-                    placeholder="Nombre"
-                    style="width: 180%"
-                  />
-                </span>
-  
-                <span>
-                  <span>Cedula:</span>
-                  <input
-                    class="form-control border-1"
-                    type="text"
-                    placeholder="Cédula"
-                    style="width: 180%"
-                  />
-                </span>
-  
-                <span>
-                  <span>Rol</span>
-                  <select class="form-select" style="width: 470%">
-                    <option class="text-secondary">Rol</option>
-                    <option>[rol]</option>
-                    <option>[rol]</option>
-                    <option>[rol]</option>
-                  </select>
-                </span>
-  
-                <span>
-                  <span>Horario:</span>
-                  <input
-                    class="form-control border-1"
-                    placeholder="Horario"
-                    style="width: 180%"
-                  />
-                </span>
-  
-                <span>
-                  <span>Salario:</span>
-                  <input
-                    class="form-control border-1"
-                    type="number"
-                    placeholder="Salario CRC"
-                    style="width: 180%"
-                  />
-                </span>
-  
-                <span>
-                  <span>Seguro Social:</span>
-                  <input
-                    class="form-control border-1"
-                    placeholder="Seguro social"
-                    style="width: 180%"
-                  />
-                </span>
+
+              <span>
+                <span>Nombre Completo:</span>
+                <input
+                  class="form-control border-1"
+                  type="text"
+                  placeholder="Nombre"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Cedula:</span>
+                <input
+                  class="form-control border-1"
+                  type="text"
+                  placeholder="Cédula"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Fecha de Ingreso:</span>
+                <input
+                  class="form-control border-1"
+                  type="date"
+                  placeholder="Fecha"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Correo Electronico:</span>
+                <input
+                  class="form-control border-1"
+                  type="email"
+                  placeholder="Email"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Dirección:</span>
+                <input
+                  class="form-control border-1"
+                  type="text"
+                  placeholder="Dirección"
+                  style="width: 180%"
+                />
+              </span>
+
+              <span>
+                <span>Fecha de ultima compra:</span>
+                <input
+                  class="form-control border-1"
+                  type="date"
+                  placeholder="Fecha Compra"
+                  style="width: 180%"
+                />
+              </span>
+
               </div>
 
             <div class="modal-footer my-4 d-flex justify-content-between">
