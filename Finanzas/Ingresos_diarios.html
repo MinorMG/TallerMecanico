@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Reportes de Ingresos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Para el gráfico -->
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5;">
+    <h1 style="text-align: center; color: #333;">Generar Reporte de Ingresos</h1>
+
+    <!-- Formulario para seleccionar el rango de fechas y tipo de reporte -->
+    <div style="width: 80%; margin: 20px auto; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 5px;">
+        <h2 style="color: #333; text-align: center;">Selecciona los parámetros para el reporte</h2>
+        <form>
+            <div style="margin-bottom: 15px;">
+                <label for="rango-fechas" style="display: block; color: #555; font-weight: bold; margin-bottom: 5px;">Rango de Fechas:</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                <span style="margin: 0 10px;">a</span>
+                <input type="date" id="fecha-fin" name="fecha-fin" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="tipo-reporte" style="display: block; color: #555; font-weight: bold; margin-bottom: 5px;">Tipo de Reporte:</label>
+                <select id="tipo-reporte" name="tipo-reporte" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <option value="diario">Ingresos Diarios</option>
+                    <option value="semanal">Ingresos Semanales</option>
+                    <option value="mensual">Ingresos Mensuales</option>
+                </select>
+            </div>
+            <button type="submit" style="width: 100%; background-color: #002a4d; color: white; padding: 10px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Generar Reporte</button>
+        </form>
+    </div>
+
+    <!-- Reporte generado -->
+    <div id="reporte" style="width: 80%; margin: 20px auto; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 5px; display: block;">
+        <h2 style="color: #333; text-align: center;">Reporte de Ingresos</h2>
+
+        <!-- Totales de ingresos -->
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <div style="width: 30%; text-align: center;">
+                <h3>Total Ingresos</h3>
+                <p id="total-ingresos" style="font-size: 24px; color: #002a4d;">$1,270.00</p>
+            </div>
+            <div style="width: 30%; text-align: center;">
+                <h3>Total Pagos</h3>
+                <p id="total-pagos" style="font-size: 24px; color: #002a4d;">$1,270.00</p>
+            </div>
+            <div style="width: 30%; text-align: center;">
+                <h3>Total Deuda</h3>
+                <p id="total-deuda" style="font-size: 24px; color: #FF5733;">$0.00</p>
+            </div>
+        </div>
+
+        <!-- Gráfico de ingresos -->
+        <canvas id="grafico-ingresos" width="400" height="200"></canvas>
+
+        <!-- Tabla de Ingresos -->
+        <table style="width: 100%; margin-top: 20px; border-collapse: collapse; background: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <thead>
+                <tr style="background-color: #002a4d; color: white; text-align: left;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Fecha</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Monto</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Método de Pago</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se generarán las filas de la tabla con los datos de los ingresos -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-01</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$100.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Tarjeta de Crédito</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-02</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$150.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">PayPal</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-03</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$200.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Efectivo</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-04</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$250.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Transferencia bancaria</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-05</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$120.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">PayPal</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-06</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$180.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Tarjeta de Crédito</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">2024-12-07</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">$220.00</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Efectivo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script para generar el gráfico de ingresos -->
+    <script>
+        const ctx = document.getElementById('grafico-ingresos').getContext('2d');
+        const data = {
+            labels: ['2024-12-01', '2024-12-02', '2024-12-03', '2024-12-04', '2024-12-05', '2024-12-06', '2024-12-07'],
+            datasets: [{
+                label: 'Ingresos Diarios',
+                data: [100, 150, 200, 250, 120, 180, 220],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, config);
+    </script>
+</body>
+</html>
