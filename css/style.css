@@ -62,7 +62,6 @@ button:active {
 .btn {
   white-space: nowrap; /* Evita que el texto se divida en varias lineas */
   overflow: hidden; /* Oculta el texto que se sale*/
-  text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
 }
 
 @keyframes click {
@@ -101,7 +100,6 @@ button:active {
     background-color: #fff;
     margin-left: 20px;
     overflow: hidden;
-    justify-items: center;
     align-items: center;
   }
 
@@ -125,7 +123,7 @@ button:active {
       400px auto 200px;
   }
 
-  span {
+  span{
     text-align: left;
     justify-self: start;
     align-self: start;
@@ -138,3 +136,5 @@ button:active {
     overflow: hidden;
   }
 }
+
+
